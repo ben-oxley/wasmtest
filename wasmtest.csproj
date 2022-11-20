@@ -11,6 +11,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Dockerfile-Wasmtime" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="Dockerfile-Wasmtime" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.17.0" />
     <PackageReference Include="Wasi.AspNetCore.Server.Native" Version="0.1.2-preview.10061" />
     <PackageReference Include="Wasi.Sdk" Version="0.1.2-preview.10061" />

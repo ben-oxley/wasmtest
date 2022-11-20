@@ -1,0 +1,3 @@
+﻿FROM stevesanderson/wasmtime
+COPY . .
+ENTRYPOINT [ "wasmtime" "wasmtest.wasm" ]
