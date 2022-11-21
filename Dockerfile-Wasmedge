@@ -1,0 +1,3 @@
+﻿FROM wasmedge/slim
+COPY . .
+ENTRYPOINT [ "wasmedge" "wasmtest.wasm" ]

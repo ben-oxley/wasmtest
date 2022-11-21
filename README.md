@@ -13,6 +13,9 @@ Once compiled, you can check it in wasmtime with:
 
 wasmtime run wasmtest.wasm --tcplisten localhost:8080 --env ASPNETCORE_URLS=http://localhost:8080
 
+To build with wasmtime:
+Get-Content .\Dockerfile-Wasmtime | docker build -t wasitesttime -
+
 To build the docker file:
 
 docker buildx build --platform wasi/wasm32 -t wasitest .
@@ -20,3 +23,6 @@ docker buildx build --platform wasi/wasm32 -t wasitest .
 To run:
 
 docker run -dp 8080:8080 --name=wasitest --runtime=io.containerd.wasmedge.v1 --platform=wasi/wasm32 wasitest
+
+At the moment this *will not work* in Docker as docker uses wasmedge to provide a containerd shim and wasmedge has an issue: https://github.com/WasmEdge/WasmEdge/issues/2056 (credit to https://blog.kubesimplify.com/embed-http-servers-in-wasm-with-rust-and-csharp)
+
