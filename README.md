@@ -16,6 +16,8 @@ wasmtime run wasmtest.wasm --tcplisten localhost:8080 --env ASPNETCORE_URLS=http
 To build with wasmtime:
 Get-Content .\Dockerfile-Wasmtime | docker build -t wasitesttime -
 
+For the next phase we look at using wasmedge in docker. *This does not work yet.*
+
 To build the docker file:
 
 docker buildx build --platform wasi/wasm32 -t wasitest .
